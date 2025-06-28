@@ -1,0 +1,19 @@
+services:
+  emqx:
+    image: emqx/emqx:5.10.0
+    ports:
+      - 1883:1883
+      - 8083:8083
+      - 18083:18083
+    environment:
+      - EMQX_NODE__COOKIE=Y8PKwtA3HLks1EEX
+      - EMQX_ALLOW_ANONYMOUS=true
+      - EMQX_DURABLE_SESSIONS__ENABLE=true
+      - EMQX_DURABLE_STORAGE__MESSAGES__LAYOUT__SERIALIZATION_SCHEMA=asn1
+      - EMQX_DASHBOARD__DEFAULT_USERNAME=admin
+      - EMQX_DASHBOARD__DEFAULT_PASSWORD=admin
+    volumes:
+      - emqx:/opt/emqx/data
+
+volumes:
+  emqx:
