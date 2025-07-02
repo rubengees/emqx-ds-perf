@@ -1,6 +1,6 @@
 import mqtt from "mqtt"
 
-const EMQX_URL = "mqtt://localhost:1883"
+const EMQX_URL = "mqtt://emqx:1883"
 const LOAD_FACTOR = 10 // Increase to send more messages per second.
 
 const mqttClients: mqtt.MqttClient[] = []
