@@ -12,6 +12,11 @@ services:
       - EMQX_DURABLE_STORAGE__MESSAGES__LAYOUT__SERIALIZATION_SCHEMA=asn1
       - EMQX_DASHBOARD__DEFAULT_USERNAME=admin
       - EMQX_DASHBOARD__DEFAULT_PASSWORD=admin
+      - EMQX_durable_storage__messages__layout__wildcard_thresholds=[0, infinity, 0, 10]
+      - EMQX_durable_storage__messages__rocksdb__write_buffer_size=10MB
+      - EMQX_durable_storage__messages__replication_options__wal_max_size_bytes=100000
+      - EMQX_durable_session__batch_size=10
+      - EMQX_force_shutdown__enable=false
     volumes:
       - emqx:/opt/emqx/data
       - ./emqx-patches:/opt/emqx/data/patches
