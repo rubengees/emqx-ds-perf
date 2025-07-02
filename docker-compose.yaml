@@ -14,6 +14,7 @@ services:
       - EMQX_DASHBOARD__DEFAULT_PASSWORD=admin
     volumes:
       - emqx:/opt/emqx/data
+      - ./emqx-patches:/opt/emqx/data/patches
 
 volumes:
   emqx:
